@@ -35,6 +35,10 @@
 			}
 			return $this->conn;
 		}
+		public function data()
+		{
+			return '2019-08-27'
+		}
 
 	}
 ?>

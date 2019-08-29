@@ -1,1 +1,1 @@
-C:\wamp\bin\php\php7.2.18\php.exe composer.phar install
+C:\wamp64\bin\php\php7.2.18\php.exe composer.phar install

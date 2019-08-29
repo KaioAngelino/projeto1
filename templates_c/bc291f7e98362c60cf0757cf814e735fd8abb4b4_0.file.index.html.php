@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.33, created on 2019-08-27 18:49:01
+  from 'C:\wamp\www\projeto1\App\View\index.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5d657b1d2b0b57_60393450',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'bc291f7e98362c60cf0757cf814e735fd8abb4b4' => 
+    array (
+      0 => 'C:\\wamp\\www\\projeto1\\App\\View\\index.html',
+      1 => 1566494086,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5d657b1d2b0b57_60393450 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -26,15 +49,19 @@
     <link rel="shortcut icon" href="App/assets/img/favicon.png">
     <!-- Tweaks for older IEs-->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+        <?php echo '<script'; ?>
+ src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"><?php echo '</script'; ?>
+><![endif]-->
 </head>
 
 <body>
 
-    {php}
+    <?php 
     \App\Controller\Rotas::getPagina();
-    {/php}
+    ?>
     <footer class="main-footer">
         <div class="container">
           <div class="row">
@@ -88,11 +115,22 @@
         </div>
       </footer>
     <!-- JavaScript files-->
-    <script src="App/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="App/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="App/assets/vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="App/assets/vendor/lightbox2/js/lightbox.js"></script>
-    <script src="App/assets/js/front.js"></script>
+    <?php echo '<script'; ?>
+ src="App/assets/vendor/jquery/jquery.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="App/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="App/assets/vendor/jquery.cookie/jquery.cookie.js"> <?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="App/assets/vendor/lightbox2/js/lightbox.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="App/assets/js/front.js"><?php echo '</script'; ?>
+>
 </body>
 
-</html>
+</html><?php }
+}

@@ -11,8 +11,6 @@
 	
 	define("CAMINHO_DOMNIO",$caminho_dominio);
 	define('JQUERY','<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>');
-/*BOOTSTRAP*/
-	define('BOOTSTRAP','App/assets/css/bootstrap.min.css');
 /*MAILER*/
 	define('MAIL_HOST','...');
 	define('MAIL_USER_NAME','...');

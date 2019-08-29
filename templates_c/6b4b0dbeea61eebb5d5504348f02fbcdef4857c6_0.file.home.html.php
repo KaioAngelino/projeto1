@@ -1,4 +1,27 @@
-    <!-- navbar-->
+<?php
+/* Smarty version 3.1.33, created on 2019-08-27 18:49:01
+  from 'C:\wamp\www\projeto1\App\View\home.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5d657b1d2c6010_92441688',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '6b4b0dbeea61eebb5d5504348f02fbcdef4857c6' => 
+    array (
+      0 => 'C:\\wamp\\www\\projeto1\\App\\View\\home.html',
+      1 => 1566929708,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5d657b1d2c6010_92441688 (Smarty_Internal_Template $_smarty_tpl) {
+?>    <!-- navbar-->
     <header class="header">
         <nav class="navbar navbar-expand-lg fixed-top">
           <div class="container"><a href="./" class="navbar-brand"><img src="App/assets/img/logo.svg" alt="" class="img-fluid"></a>
@@ -247,8 +270,11 @@
           </div>
         </div>
       </section>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script >
+      <?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"><?php echo '</script'; ?>
+>
+      <?php echo '<script'; ?>
+ >
         $('#home_bt_enviar').click(function(){
           var acao = 'enviar_dados'
           var home_nome = $('#home_nome').val()
@@ -275,4 +301,6 @@
           })
           
         })
-      </script>
+      <?php echo '</script'; ?>
+><?php }
+}
