@@ -7,22 +7,17 @@
 			$usu_ctrl = new App\Controller\Usu_usuarioController();
 			$main_dao = new App\Controller\MainDao();
 
-
 			$usu_model->set_usu_id(NULL);
-			
 			$usu_model->set_usu_nome($_POST['home_nome']);
 			$usu_model->set_usu_email($_POST['home_email']);
 			$usu_model->set_usu_whatsapp($_POST['home_whatsapp']);
-
-
-			$usu_model->set_usu_token();
-			$usu_model->set_usu_status($_POST['I']);
+			$usu_model->set_usu_token('lkjg2hkjh4lkj423h4523542jkl352kj35hl2k3j5h23');
+			$usu_model->set_usu_status('I');
 			$data = $main_dao->data();
-			$usu_model->set_usu_data($_POST[$data]);
-			$usu_model->set_usu_data_atlz($_POST[$data]);
-
+			$usu_model->set_usu_data($data);
+			$usu_model->set_usu_data_atlz($data);
 			$result = $usu_ctrl->usu_usuarioCreate($usu_model);
-				var_dump($result);
+				
 				break;
 			
 			case 'ACAO_2':

@@ -13,8 +13,8 @@ class Usu_usuarioDao extends MainDao
 			$usu_token		= $obj->get_usu_token(); 
 			$usu_status		= $obj->get_usu_status(); 
 			$usu_data		= $obj->get_usu_data(); 
-			$usu_atlz		= $obj->get_usu_atlz(); 
-			$query = 'INSERT INTO usu_usuario ( usu_id,usu_nome,usu_email,usu_whatsapp,usu_token,usu_status,usu_data,usu_atlz ) VALUES ( :usu_id,:usu_nome,:usu_email,:usu_whatsapp,:usu_token,:usu_status,:usu_data,:usu_atlz ); ';
+			$usu_data_atlz		= $obj->get_usu_data_atlz(); 
+			$query = 'INSERT INTO usu_usuario ( usu_id,usu_nome,usu_email,usu_whatsapp,usu_token,usu_status,usu_data,usu_data_atlz ) VALUES ( :usu_id,:usu_nome,:usu_email,:usu_whatsapp,:usu_token,:usu_status,:usu_data,:usu_data_atlz ); ';
 			$stmt = $this->conn->prepare( $query ); 
 			$stmt->bindParam(':usu_id', $usu_id,\PDO::PARAM_STR); 
 			$stmt->bindParam(':usu_nome', $usu_nome,\PDO::PARAM_STR); 
@@ -23,7 +23,7 @@ class Usu_usuarioDao extends MainDao
 			$stmt->bindParam(':usu_token', $usu_token,\PDO::PARAM_STR); 
 			$stmt->bindParam(':usu_status', $usu_status,\PDO::PARAM_STR); 
 			$stmt->bindParam(':usu_data', $usu_data,\PDO::PARAM_STR); 
-			$stmt->bindParam(':usu_atlz', $usu_atlz,\PDO::PARAM_STR); 
+			$stmt->bindParam(':usu_data_atlz', $usu_data_atlz,\PDO::PARAM_STR); 
 			if($stmt->execute()): 
 				$this->conn->commit();
 				return true;
@@ -40,7 +40,7 @@ class Usu_usuarioDao extends MainDao
 	{ 
 		try { 
 			$this->conn->beginTransaction(); 
-			$query = 'SELECT usu_id,usu_nome,usu_email,usu_whatsapp,usu_token,usu_status,usu_data,usu_atlz FROM usu_usuario';
+			$query = 'SELECT usu_id,usu_nome,usu_email,usu_whatsapp,usu_token,usu_status,usu_data,usu_data_atlz FROM usu_usuario';
 			$stmt = $this->conn->prepare( $query ); 
 			$stmt->execute(); 
 			$array = $stmt->fetchAll(\PDO::FETCH_ASSOC); 
@@ -61,7 +61,7 @@ class Usu_usuarioDao extends MainDao
 		try {
 			$this->conn->beginTransaction();
 			$usu_id		= $obj->get_usu_id();
-			$query = 'SELECT usu_id,usu_nome,usu_email,usu_whatsapp,usu_token,usu_status,usu_data,usu_atlz FROM usu_usuario WHERE usu_id = :usu_id';
+			$query = 'SELECT usu_id,usu_nome,usu_email,usu_whatsapp,usu_token,usu_status,usu_data,usu_data_atlz FROM usu_usuario WHERE usu_id = :usu_id';
 			$stmt = $this->conn->prepare( $query );
 			$stmt->bindParam(':usu_id',$usu_id,\PDO::PARAM_STR);
 			$stmt->execute();
@@ -90,8 +90,8 @@ class Usu_usuarioDao extends MainDao
 			$usu_token		= $obj->get_usu_token(); 
 			$usu_status		= $obj->get_usu_status(); 
 			$usu_data		= $obj->get_usu_data(); 
-			$usu_atlz		= $obj->get_usu_atlz(); 
-			$query = 'UPDATE usu_usuario SET usu_id = :usu_id,usu_nome = :usu_nome,usu_email = :usu_email,usu_whatsapp = :usu_whatsapp,usu_token = :usu_token,usu_status = :usu_status,usu_data = :usu_data,usu_atlz = :usu_atlz WHERE usu_id = :usu_id'; 
+			$usu_data_atlz		= $obj->get_usu_data_atlz(); 
+			$query = 'UPDATE usu_usuario SET usu_id = :usu_id,usu_nome = :usu_nome,usu_email = :usu_email,usu_whatsapp = :usu_whatsapp,usu_token = :usu_token,usu_status = :usu_status,usu_data = :usu_data,usu_data_atlz = :usu_data_atlz WHERE usu_id = :usu_id'; 
 			$stmt = $this->conn->prepare( $query ); 
 			$stmt->bindParam(':usu_id',$usu_id,\PDO::PARAM_STR); 
 			$stmt->bindParam(':usu_nome',$usu_nome,\PDO::PARAM_STR); 
@@ -100,7 +100,7 @@ class Usu_usuarioDao extends MainDao
 			$stmt->bindParam(':usu_token',$usu_token,\PDO::PARAM_STR); 
 			$stmt->bindParam(':usu_status',$usu_status,\PDO::PARAM_STR); 
 			$stmt->bindParam(':usu_data',$usu_data,\PDO::PARAM_STR); 
-			$stmt->bindParam(':usu_atlz',$usu_atlz,\PDO::PARAM_STR); 
+			$stmt->bindParam(':usu_data_atlz',$usu_data_atlz,\PDO::PARAM_STR); 
 			if($stmt->execute()) 
 			{ 
 				$this->conn->commit(); 

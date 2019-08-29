@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-27 18:49:01
+/* Smarty version 3.1.33, created on 2019-08-29 19:46:36
   from 'C:\wamp\www\projeto1\App\View\home.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d657b1d2c6010_92441688',
+  'unifunc' => 'content_5d682b9c06ef40_33225209',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6b4b0dbeea61eebb5d5504348f02fbcdef4857c6' => 
     array (
       0 => 'C:\\wamp\\www\\projeto1\\App\\View\\home.html',
-      1 => 1566929708,
+      1 => 1567107962,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d657b1d2c6010_92441688 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d682b9c06ef40_33225209 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <!-- navbar-->
     <header class="header">
         <nav class="navbar navbar-expand-lg fixed-top">
@@ -291,8 +291,10 @@ function content_5d657b1d2c6010_92441688 (Smarty_Internal_Template $_smarty_tpl)
               home_email:home_email,
               home_whatsapp:home_whatsapp,
             },
-            success: function(data){
-              alert(data)
+            success: function(data)
+            {
+              // alert(data);
+              window.location.href = "obrigado"
             },
             erro:function(data){
 
