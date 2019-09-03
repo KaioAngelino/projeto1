@@ -3,7 +3,7 @@
 	require __DIR__ . '/vendor/autoload.php';
 
 /*CONSTANTES*/
-	$pasta_instalacao = 'estrutura_basica';
+	$pasta_instalacao = 'projeto1';
 	$dominio = $_SERVER['SERVER_NAME'];
 	$protocolo = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
 	$url_principal = $protocolo . $dominio;
@@ -12,12 +12,12 @@
 	define("CAMINHO_DOMNIO",$caminho_dominio);
 	define('JQUERY','<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>');
 /*MAILER*/
-	define('MAIL_HOST','...');
-	define('MAIL_USER_NAME','...');
-	define('MAIL_PASS','...');
-	define('MAIL_FROM','...');
-	define('MAIL_FROM_NAME','...');
-	define('MAIL_SUBJECT','...');
+	define('MAIL_HOST','smtp.gmail.com');
+	define('MAIL_USER_NAME','kaioangelino@gmail.com');
+	define('MAIL_PASS','kaioiak99');
+	define('MAIL_FROM','kaioangelino@gmail.com	');
+	define('MAIL_FROM_NAME','Kaio');
+	define('MAIL_SUBJECT','#');
 
 	$banco = 'local';
 

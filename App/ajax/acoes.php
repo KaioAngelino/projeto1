@@ -1,5 +1,8 @@
-<?php 
-	require '../../config.php';
+<?php
+
+use App\Controller\MainDao;
+
+require '../../config.php';
 	if(isset($_POST)):
 		switch ($_POST['acao']) {
 			case 'enviar_dados':
@@ -16,8 +19,18 @@
 			$data = $main_dao->data();
 			$usu_model->set_usu_data($data);
 			$usu_model->set_usu_data_atlz($data);
+
+//Cadastro de Usuário			
 			$result = $usu_ctrl->usu_usuarioCreate($usu_model);
-				
+//Envio de Email
+			MainDao->enviaEmail($usu_model->get_usu_nome(),$usu_model->get_usu_email(),
+								$usu_model->get_usu_token(),
+								'',"Cadastro realizado com sucesso",'email_cadastro_de_usuario',"");
+				if ($result) {
+					echo 1;
+				}else{
+					echo 0;
+				}
 				break;
 			
 			case 'ACAO_2':

@@ -28,5 +28,11 @@ class Usu_usuarioController
 	public function usu_usuarioDelete(Usu_usuarioModel $obj) 
 	{ 
 		return $this->dao->usu_usuarioDelete($obj); 
+	}
+	public function usu_usuarioReadByToken(Usu_usuarioModel  $obj){
+		return $this->dao->usu_usuarioReadByToken($obj); 
+	} 
+	public function usu_usuarioUpdateStatusByToken(Usu_usuarioModel  $obj){
+		return $this->dao->usu_usuarioUpdateStatusByToken($obj); 
 	} 
 } 

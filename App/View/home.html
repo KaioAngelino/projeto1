@@ -268,9 +268,15 @@
             success: function(data)
             {
               // alert(data);
-              window.location.href = "obrigado"
+              if (data == 1) {
+                window.location.href = "agradecimento"  
+              }else{
+                window.location.href = "desculpa"
+              }
+              
             },
             erro:function(data){
+              
 
             }
 
