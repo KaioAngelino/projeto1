@@ -94,7 +94,7 @@
 			$codHtml = '
 			Clica nesse link para confirmar seu e-mail!<br>
 
-			<a href="'.CAMINHO_DOMNIO.'obrigado?tk='.token.'"">Clique Aqui!</a>';
+			<a href="'.CAMINHO_DOMNIO.'obrigado?tk='.token.'"">Confirme o teu cadastro!</a>';
 			return $codHtml;
 		}
 

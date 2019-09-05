@@ -14,22 +14,22 @@ require '../../config.php';
 			$usu_model->set_usu_nome($_POST['home_nome']);
 			$usu_model->set_usu_email($_POST['home_email']);
 			$usu_model->set_usu_whatsapp($_POST['home_whatsapp']);
-			$usu_model->set_usu_token('lkjg2hkjh4lkj423h4523542jkl352kj35hl2k3j5h23');
+			$hash = $usu_ctrl->hash($_POST['home_email']);
+			$usu_model->set_usu_token($hash);
 			$usu_model->set_usu_status('I');
-			$data = $main_dao->data();
+			$data = $main_dao->dataHora();
 			$usu_model->set_usu_data($data);
 			$usu_model->set_usu_data_atlz($data);
 
 //Cadastro de Usuário			
 			$result = $usu_ctrl->usu_usuarioCreate($usu_model);
 //Envio de Email
-			MainDao->enviaEmail($usu_model->get_usu_nome(),$usu_model->get_usu_email(),
-								$usu_model->get_usu_token(),
-								'',"Cadastro realizado com sucesso",'email_cadastro_de_usuario',"");
+			
 				if ($result) {
+					//$main_dao->enviaEmail($usu_model->get_usu_nome(),$usu_model->get_usu_email(),$usu_model->get_usu_token(),								'',"Cadastro realizado com sucesso",'email_cadastro_de_usuario',"");
 					echo 1;
 				}else{
-					echo 0;
+					echo 0; 
 				}
 				break;
 			
@@ -43,4 +43,3 @@ require '../../config.php';
 
 
 	endif;
- ?>

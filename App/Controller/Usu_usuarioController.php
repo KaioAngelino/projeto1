@@ -34,5 +34,11 @@ class Usu_usuarioController
 	} 
 	public function usu_usuarioUpdateStatusByToken(Usu_usuarioModel  $obj){
 		return $this->dao->usu_usuarioUpdateStatusByToken($obj); 
-	} 
+	}
+	public function hash($password){
+		return $this->dao->hash($password);
+	}
+	public function verify($password, $hash){
+		return $this->dao->password_verify($password, $hash);
+	}
 } 
