@@ -188,4 +188,26 @@ class Usu_usuarioDao extends MainDao
 			return false;
 		}
 	}
+	public function usu_usuarioUpdateStatusByToken(Usu_usuarioModel  $obj)
+	{
+		try {
+			$this->conn->beginTransaction();
+			$usu_token		= $obj->get_usu_token();
+			$query = 'SELECT usu_id,usu_nome,usu_email,usu_whatsapp,usu_token,usu_status,usu_data,usu_data_atlz FROM usu_usuario WHERE usu_token = :usu_token';
+			$stmt = $this->conn->prepare($query);
+			$stmt->bindParam(':usu_token', $usu_token, \PDO::PARAM_STR);
+			$stmt->execute();
+			$array = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+			if ($array != NULL) {
+				$this->conn->commit();
+				return $array[0];
+			} else {
+				$this->conn->rollback();
+				return false;
+			}
+		} catch (Exception $e) {
+			$this->conn->rollback();
+			return false;
+		}
+	}
 }

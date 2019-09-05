@@ -12,11 +12,11 @@ if (isset($_GET['tk'])) {
 }
 	
 
-	/*if ($result !=NULL) {
+	if ($result !=NULL) {
 		$usu_model->set_usu_status('A');
 		$usu_model->set_usu_id($result['usu_id']);
 		$usu_ctrl->usu_usuarioUpdateStatusByToken($usu_model);
-	}*/
+	}
 
 
 
